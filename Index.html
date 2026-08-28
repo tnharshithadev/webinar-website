@@ -1,0 +1,1751 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scale Your Ecommerce Brand Profitably — One Big Bull</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* =============================================================
+   EXACT DESIGN COLOR OVERRIDE: RED TO GLOWING GOLD
+   - Primary Gold   : #FFD43B
+   - Bright Gold    : #FFF3A3
+   - Golden Glow    : rgba(255, 212, 59, 0.35)
+   - Deep Gold      : #D4A900
+   - Background     : #060608 (Exact Dark)
+   ============================================================= */
+      :root {
+        --gold: #ffd43b;
+        --gold-bright: #fff3a3;
+        --gold-glow: rgba(255, 212, 59, 0.35);
+        --gold-deep: #d4a900;
+
+        --bg: #060608;
+        --surface: #0b0b0f;
+        --surface-card: #0e0e13;
+        --border: rgba(255, 212, 59, 0.16);
+        --border-hover: rgba(255, 212, 59, 0.38);
+
+        --text: #ffffff;
+        --muted: #8d8995;
+        --sans:
+          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+
+        --gold-shadow:
+          0 0 18px var(--gold-glow), 0 0 45px rgba(255, 212, 59, 0.12);
+        --gold-shadow-strong:
+          0 0 26px rgba(255, 212, 59, 0.55), 0 0 65px rgba(255, 212, 59, 0.28);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        line-height: 1.5;
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      section {
+        padding: 100px 0;
+        border-bottom: 1px solid rgba(255, 212, 59, 0.08);
+        position: relative;
+      }
+
+      /* --- GOLD UTILITIES --- */
+      .gold {
+        color: var(--gold) !important;
+        text-shadow:
+          0 0 12px var(--gold-glow),
+          0 0 35px rgba(255, 212, 59, 0.18);
+      }
+      .gold-bright {
+        color: var(--gold-bright) !important;
+        text-shadow: 0 0 14px rgba(255, 255, 240, 0.4);
+      }
+      .tag-small {
+        font-size: 0.72rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 14px;
+        display: block;
+        font-weight: 800;
+        text-shadow: 0 0 8px var(--gold-glow);
+      }
+
+      /* --- BUTTONS --- */
+      .btn-gold {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: linear-gradient(
+          135deg,
+          var(--gold) 0%,
+          var(--gold-deep) 100%
+        );
+        color: #0c0a00;
+        font-weight: 800;
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+        padding: 16px 36px;
+        border-radius: 8px;
+        box-shadow: var(--gold-shadow);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--gold-shadow-strong);
+      }
+
+      /* --- IMAGE LOGO STYLING --- */
+      .brand-logo-img {
+        height: 40px;
+        width: auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      /* --- TOP NAV & HERO --- */
+      header.top-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 22px 48px;
+        max-width: 1440px;
+        margin: 0 auto;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(255, 212, 59, 0.08);
+      }
+      .nav-menu {
+        display: flex;
+        gap: 36px;
+        color: var(--muted);
+      }
+      .nav-menu a:hover {
+        color: var(--gold);
+      }
+      .nav-cta {
+        background: var(--gold);
+        color: #08080a;
+        padding: 11px 26px;
+        border-radius: 6px;
+        font-weight: 800;
+        box-shadow: var(--gold-shadow);
+        cursor: pointer;
+      }
+      .nav-cta:hover {
+        box-shadow: 0 0 22px var(--gold);
+      }
+
+      .hero-section {
+        text-align: left;
+        padding: 40px 0 80px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .live-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 212, 59, 0.07);
+        border: 1px solid var(--border);
+        color: var(--gold);
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        box-shadow: 0 0 12px var(--gold-glow);
+      }
+      .live-badge::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        border-radius: 50%;
+        box-shadow: 0 0 8px var(--gold);
+      }
+      .hero-section h1 {
+        font-size: clamp(2.4rem, 4.8vw, 4rem);
+        font-weight: 900;
+        line-height: 1.12;
+        margin-bottom: 22px;
+        letter-spacing: -0.02em;
+      }
+      .hero-sub {
+        color: var(--muted);
+        max-width: 580px;
+        margin-bottom: 34px;
+        font-size: 0.98rem;
+        line-height: 1.6;
+      }
+      .hero-meta {
+        display: flex;
+        gap: 32px;
+        margin-bottom: 34px;
+        font-size: 0.86rem;
+        font-weight: 600;
+      }
+      .hero-meta div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .hero-meta svg {
+        fill: var(--gold);
+        width: 18px;
+        height: 18px;
+        filter: drop-shadow(0 0 6px var(--gold-glow));
+      }
+
+      /* Radar Map Box */
+      .hero-graphic {
+        background: linear-gradient(160deg, #0e0e13 0%, #07070a 100%);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 30px;
+        position: relative;
+        box-shadow:
+          0 25px 60px rgba(0, 0, 0, 0.9),
+          0 0 35px rgba(255, 212, 59, 0.06);
+      }
+      .radar-map {
+        width: 100%;
+        height: 220px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .radar-circle {
+        position: absolute;
+        width: 170px;
+        height: 170px;
+        border: 1px dashed rgba(255, 212, 59, 0.28);
+        border-radius: 50%;
+      }
+      .radar-center-dot {
+        width: 12px;
+        height: 12px;
+        background: var(--gold);
+        border-radius: 50%;
+        box-shadow:
+          0 0 15px var(--gold),
+          0 0 30px var(--gold);
+        position: relative;
+      }
+      .radar-center-dot::after {
+        content: "";
+        position: absolute;
+        inset: -8px;
+        border: 1px solid var(--gold);
+        border-radius: 50%;
+        animation: radarPulse 2s infinite;
+      }
+      @keyframes radarPulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(2.4);
+          opacity: 0;
+        }
+      }
+      .radar-label {
+        position: absolute;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+      }
+      .rl-uk {
+        top: 12px;
+        right: 22%;
+      }
+      .rl-usa {
+        top: 12px;
+        right: 12%;
+      }
+      .rl-uae {
+        top: 32%;
+        right: 6%;
+      }
+      .rl-au {
+        bottom: 22%;
+        right: 16%;
+      }
+      .rl-sg {
+        bottom: 32%;
+        left: 22%;
+      }
+      .radar-india {
+        position: absolute;
+        bottom: 36%;
+        left: 44%;
+        color: var(--gold);
+        font-weight: 900;
+        font-size: 0.85rem;
+        text-shadow: 0 0 10px var(--gold-glow);
+      }
+      .hero-graphic-footer {
+        display: flex;
+        justify-content: space-around;
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding-top: 16px;
+        margin-top: 16px;
+      }
+      .hero-tags {
+        display: flex;
+        gap: 16px;
+        font-size: 0.7rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-top: 16px;
+      }
+      .scroll-indicator {
+        font-size: 0.7rem;
+        letter-spacing: 0.22em;
+        color: var(--muted);
+        text-transform: uppercase;
+        margin-top: 30px;
+        display: inline-block;
+      }
+
+      /* --- SECTION 2: PROBLEM STATEMENT --- */
+      .section-problem {
+        text-align: left;
+      }
+      .section-problem h2 {
+        font-size: clamp(2rem, 3.8vw, 3rem);
+        font-weight: 900;
+        line-height: 1.15;
+        max-width: 720px;
+        margin-bottom: 36px;
+      }
+      .tried-grid-wrapper {
+        max-width: 920px;
+        margin-bottom: 44px;
+      }
+      .tried-row-top {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .tried-row-bot {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        max-width: 610px;
+      }
+      .tried-card {
+        background: var(--surface-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 22px 24px;
+      }
+      .tried-card .num {
+        font-size: 0.72rem;
+        color: var(--gold);
+        font-weight: 800;
+        margin-bottom: 8px;
+        display: block;
+        text-shadow: 0 0 8px var(--gold-glow);
+      }
+      .tried-card p {
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: #e2e2e6;
+      }
+      .problem-bottom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: flex-end;
+        gap: 40px;
+        margin-top: 20px;
+      }
+      .problem-conclusion {
+        font-size: 1.15rem;
+        color: var(--muted);
+      }
+      .ads-bold {
+        font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        margin-top: 4px;
+      }
+      .ads-bold span {
+        color: var(--gold);
+        text-shadow:
+          0 0 16px var(--gold-glow),
+          0 0 45px rgba(255, 212, 59, 0.3);
+      }
+      .problem-sub {
+        color: var(--muted);
+        font-size: 0.88rem;
+        margin-top: 10px;
+      }
+
+      /* --- SECTION 3: WEBINAR OUTCOMES --- */
+      .section-outcomes h2 {
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        font-weight: 900;
+        max-width: 620px;
+        margin-top: 6px;
+        line-height: 1.15;
+        margin-bottom: 45px;
+      }
+      .outcome-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .outcome-card {
+        background: linear-gradient(90deg, var(--surface) 0%, var(--bg) 100%);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 34px 38px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+      }
+      .outcome-left {
+        display: flex;
+        align-items: flex-start;
+        gap: 34px;
+      }
+      .outcome-num {
+        font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+        font-weight: 900;
+        color: var(--gold);
+        line-height: 1;
+        text-shadow: 0 0 16px var(--gold-glow);
+        font-family: serif;
+      }
+      .outcome-content h3 {
+        font-size: clamp(1.1rem, 2vw, 1.45rem);
+        font-weight: 800;
+        margin-bottom: 8px;
+        color: #fff;
+      }
+      .outcome-content p {
+        color: var(--muted);
+        font-size: 0.9rem;
+        max-width: 650px;
+        line-height: 1.5;
+      }
+      .outcome-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: var(--surface-card);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gold);
+        flex-shrink: 0;
+        box-shadow: 0 0 10px var(--gold-glow);
+        font-size: 1rem;
+      }
+
+      /* --- SECTION 4: 5-PART SYSTEM --- */
+      .section-system {
+        background: linear-gradient(
+          180deg,
+          var(--bg) 0%,
+          var(--surface) 50%,
+          var(--bg) 100%
+        );
+      }
+      .section-system h2 {
+        font-size: clamp(2.2rem, 4.2vw, 3.2rem);
+        font-weight: 900;
+        margin-top: 6px;
+      }
+      .system-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-top: 45px;
+      }
+      .system-box-left {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .sys-step {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 15px 18px;
+        background: var(--bg);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .sys-step.active-gold {
+        border-color: var(--border-hover);
+        box-shadow: 0 0 16px var(--gold-glow);
+      }
+      .sys-num {
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: var(--gold);
+        background: rgba(255, 212, 59, 0.1);
+        padding: 5px 9px;
+        border-radius: 6px;
+      }
+      .sys-step-title {
+        font-weight: 700;
+        font-size: 0.92rem;
+        letter-spacing: 0.05em;
+      }
+      .sys-step.profit-box {
+        border: 1px solid var(--gold-glow);
+        background: rgba(255, 212, 59, 0.03);
+      }
+      .system-box-right {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .sys-right-title {
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 22px;
+        font-weight: 800;
+        text-shadow: 0 0 8px var(--gold-glow);
+      }
+      .lever-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+      .lever-item:last-child {
+        border-bottom: none;
+      }
+      .lever-x {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(255, 212, 59, 0.14);
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.72rem;
+        font-weight: 900;
+        box-shadow: 0 0 8px var(--gold-glow);
+      }
+      .sys-note {
+        margin-top: 26px;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.5;
+      }
+
+      /* --- SECTION 5: POSITIONING --- */
+      .section-positioning {
+        text-align: left;
+      }
+      .positioning-title {
+        font-size: clamp(2.2rem, 4.8vw, 3.6rem);
+        font-weight: 900;
+        max-width: 760px;
+        margin: 12px auto 20px 0;
+        line-height: 1.15;
+      }
+      .positioning-title span {
+        color: var(--gold);
+        text-shadow:
+          0 0 16px var(--gold-glow),
+          0 0 45px rgba(255, 212, 59, 0.25);
+      }
+      .positioning-sub {
+        color: var(--muted);
+        max-width: 580px;
+        margin-bottom: 44px;
+        font-size: 0.98rem;
+      }
+      .positioning-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 660px;
+        margin-bottom: 44px;
+      }
+      .p-row {
+        font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+        font-weight: 700;
+        color: #dcdce2;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .positioning-end {
+        font-size: clamp(2rem, 4.2vw, 3.2rem);
+        font-weight: 900;
+        color: var(--gold);
+        text-shadow:
+          0 0 18px var(--gold-glow),
+          0 0 50px rgba(255, 212, 59, 0.3);
+      }
+
+      /* --- SECTION 6: WHO SHOULD ATTEND --- */
+      .section-qual {
+        text-align: left;
+      }
+      .section-qual h2 {
+        font-size: clamp(2rem, 3.8vw, 3rem);
+        font-weight: 900;
+        margin-top: 6px;
+      }
+      .qual-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 36px;
+        margin-top: 40px;
+      }
+      .qual-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 36px;
+      }
+      .qual-box h3 {
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 22px;
+        font-weight: 800;
+        text-shadow: 0 0 8px var(--gold-glow);
+      }
+      .check-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .check-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #e2e2e6;
+      }
+      .check-icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(255, 212, 59, 0.16);
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.72rem;
+        font-weight: 900;
+        flex-shrink: 0;
+        margin-top: 2px;
+        box-shadow: 0 0 8px var(--gold-glow);
+      }
+      .cross-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 0.9rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        font-weight: 500;
+      }
+      .cross-icon {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.06);
+        color: #888;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      /* --- SECTION 7: MEET YOUR HOST --- */
+      .section-host {
+        text-align: left;
+      }
+      .host-grid {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 60px;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .host-img-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        aspect-ratio: 4/4.8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--muted);
+        font-size: 0.8rem;
+        gap: 12px;
+        box-shadow:
+          0 15px 45px rgba(0, 0, 0, 0.8),
+          0 0 25px rgba(255, 212, 59, 0.05);
+      }
+      .host-img-box svg {
+        width: 34px;
+        height: 34px;
+        stroke: var(--gold);
+        opacity: 0.7;
+      }
+      .host-details h2 {
+        font-size: clamp(2rem, 3.5vw, 2.8rem);
+        font-weight: 900;
+        margin-top: 6px;
+      }
+      .host-role {
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 800;
+        margin-top: 8px;
+        text-shadow: 0 0 8px var(--gold-glow);
+      }
+      .host-bio {
+        color: var(--muted);
+        font-size: 0.98rem;
+        line-height: 1.6;
+        margin: 22px 0 34px;
+      }
+      .host-quote {
+        font-family: serif;
+        font-size: clamp(1.25rem, 2.1vw, 1.65rem);
+        font-style: italic;
+        font-weight: 800;
+        color: #fff;
+        border-left: 3px solid var(--gold);
+        padding-left: 20px;
+        margin-bottom: 38px;
+        line-height: 1.35;
+        text-shadow: 0 0 15px rgba(255, 212, 59, 0.15);
+      }
+      .host-quote span {
+        color: var(--gold);
+        text-shadow: 0 0 12px var(--gold-glow);
+      }
+      .host-stats-row {
+        display: flex;
+        gap: 50px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 28px;
+      }
+      .hst-num {
+        font-family: serif;
+        font-size: 2.1rem;
+        font-weight: 900;
+        color: var(--gold);
+        text-shadow: 0 0 12px var(--gold-glow);
+      }
+      .hst-lbl {
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+
+      /* --- SECTION 8: BETTER SYSTEM QUOTE BANNER --- */
+      .section-quote-banner {
+        text-align: center;
+        padding: 110px 0;
+      }
+      .quote-banner-title {
+        font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+        font-weight: 900;
+        max-width: 800px;
+        margin: 0 auto 20px;
+        line-height: 1.15;
+      }
+      .quote-banner-gold {
+        font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+        font-weight: 900;
+        color: var(--gold);
+        text-shadow:
+          0 0 18px var(--gold-glow),
+          0 0 50px rgba(255, 212, 59, 0.3);
+      }
+
+      /* --- SECTION 9: FINAL CTA --- */
+      .section-final {
+        text-align: center;
+        padding: 110px 0;
+        background: radial-gradient(
+          circle at center,
+          #141106 0%,
+          var(--bg) 70%
+        );
+      }
+      .final-box {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .final-box h2 {
+        font-size: clamp(2.4rem, 5vw, 3.8rem);
+        font-weight: 900;
+        line-height: 1.15;
+        margin: 14px auto 22px;
+      }
+      .final-box h2 span {
+        color: var(--gold);
+        text-shadow:
+          0 0 18px var(--gold-glow),
+          0 0 50px rgba(255, 212, 59, 0.3);
+      }
+      .final-sub {
+        color: var(--muted);
+        max-width: 620px;
+        margin: 0 auto 38px;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .webinar-meta-box {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-bottom: 38px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 24px 36px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      }
+      .w-meta-item {
+        text-align: center;
+      }
+      .w-meta-label {
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .w-meta-val {
+        font-size: 0.98rem;
+        font-weight: 800;
+        color: var(--gold);
+        text-shadow: 0 0 10px var(--gold-glow);
+      }
+      .seats-warning {
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 18px;
+      }
+
+      /* --- FOOTER --- */
+      footer.footer-bottom {
+        border-top: 1px solid var(--border);
+        padding: 32px 48px;
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+      .footer-copy-row {
+        border-top: 1px solid rgba(255, 212, 59, 0.08);
+        padding: 24px 48px;
+        max-width: 1440px;
+        margin: 0 auto;
+        font-size: 0.78rem;
+        color: #726e78;
+      }
+
+      /* --- POPUP MODAL STYLES --- */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.82);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        padding: 20px;
+      }
+      .modal-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .modal-card {
+        background: #0b0b0f;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        width: 100%;
+        max-width: 540px;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 40px;
+        position: relative;
+        box-shadow:
+          0 25px 70px rgba(0, 0, 0, 0.9),
+          0 0 40px rgba(255, 212, 59, 0.15);
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+      }
+      .modal-overlay.active .modal-card {
+        transform: translateY(0);
+      }
+      .modal-close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: none;
+        border: none;
+        color: var(--muted);
+        font-size: 1.2rem;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          color 0.2s,
+          background 0.2s;
+      }
+      .modal-close:hover {
+        color: var(--gold);
+        background: rgba(255, 212, 59, 0.08);
+      }
+
+      .modal-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 212, 59, 0.07);
+        border: 1px solid var(--border);
+        color: var(--gold);
+        padding: 5px 14px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+      .modal-badge::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        background: var(--gold);
+        border-radius: 50%;
+        box-shadow: 0 0 6px var(--gold);
+      }
+      .modal-card h2 {
+        font-size: clamp(1.8rem, 3vw, 2.3rem);
+        font-weight: 900;
+        margin-bottom: 8px;
+      }
+      .modal-card p.modal-sub {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-bottom: 28px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+      .form-group {
+        margin-bottom: 18px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+      .form-control {
+        width: 100%;
+        background: #050507;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 14px 16px;
+        color: #fff;
+        font-family: var(--sans);
+        font-size: 0.92rem;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+        outline: none;
+      }
+      .form-control:focus {
+        border-color: var(--gold);
+        box-shadow: 0 0 12px var(--gold-glow);
+      }
+      select.form-control {
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFD43B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        background-size: 16px;
+        cursor: pointer;
+      }
+      .modal-card .btn-gold {
+        width: 100%;
+        margin-top: 10px;
+        padding: 16px;
+        font-size: 0.95rem;
+      }
+
+      /* --- RESPONSIVE --- */
+      @media (max-width: 900px) {
+        .hero-grid,
+        .tried-row-top,
+        .tried-row-bot,
+        .problem-bottom-grid,
+        .system-grid,
+        .qual-grid,
+        .host-grid,
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .tried-row-bot {
+          max-width: 100%;
+        }
+        .outcome-card {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        header.top-nav,
+        footer.footer-bottom {
+          padding: 20px;
+          flex-direction: column;
+          gap: 14px;
+          text-align: center;
+        }
+        .nav-menu {
+          display: none;
+        }
+        .check-grid {
+          grid-template-columns: 1fr;
+        }
+        .modal-card {
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. TOP NAV & HERO -->
+    <header class="top-nav">
+      <a href="#top">
+        <img src="logo.png" alt="One Big Bull" class="brand-logo-img" />
+      </a>
+
+      <div class="nav-menu">
+        <a href="#outcomes">WEBINAR</a>
+        <a href="#learn">WHAT YOU'LL LEARN</a>
+        <a href="#about">ABOUT</a>
+      </div>
+      <button class="nav-cta open-modal-btn">RESERVE MY SEAT</button>
+    </header>
+
+    <section class="hero-section" id="top">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="live-badge">LIVE ONLINE WEBINAR</div>
+            <h1>
+              Scale Your Ecommerce Brand Profitably<br /><span class="gold"
+                >India → International</span
+              >
+            </h1>
+            <p class="hero-sub">
+              The practical framework to scale your Ecommerce brand in India —
+              and expand into international markets without blindly increasing
+              your ad spend.
+            </p>
+
+            <div class="hero-meta">
+              <div>
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"
+                  />
+                </svg>
+                September 5
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"
+                  />
+                </svg>
+                4:00 PM – 8:00 PM IST
+              </div>
+            </div>
+
+            <button class="btn-gold open-modal-btn">
+              RESERVE YOUR FREE SEAT →
+            </button>
+
+            <div class="hero-tags">
+              <span>Live Online</span><span>•</span
+              ><span>4-Hour Live Webinar</span><span>•</span
+              ><span>For Ecommerce &amp; DTC Founders</span>
+            </div>
+            <div class="scroll-indicator">↓ SCROLL</div>
+          </div>
+
+          <div>
+            <div class="hero-graphic">
+              <div class="radar-map">
+                <div class="radar-circle"></div>
+                <div
+                  class="radar-circle"
+                  style="width: 100px; height: 100px"
+                ></div>
+                <div class="radar-center-dot"></div>
+                <div class="radar-label rl-uk">UK</div>
+                <div class="radar-label rl-usa">USA</div>
+                <div class="radar-label rl-uae">UAE</div>
+                <div class="radar-label rl-au">AU</div>
+                <div class="radar-label rl-sg">SG</div>
+                <div class="radar-india">INDIA</div>
+              </div>
+              <div class="hero-graphic-footer">
+                <span>Acquisition</span><span>Economics</span
+                ><span>Expansion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. THE REAL CONSTRAINT -->
+    <section class="section-problem">
+      <div class="container">
+        <span class="tag-small">The Real Constraint</span>
+        <h2>
+          Are you growing your ecommerce brand...<br />but struggling to break
+          through your current revenue ceiling?
+        </h2>
+        <p
+          style="
+            font-size: 0.75rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 20px;
+          "
+        >
+          Maybe you've already tried:
+        </p>
+
+        <div class="tried-grid-wrapper">
+          <div class="tried-row-top">
+            <div class="tried-card">
+              <span class="num">01</span>
+              <p>Increasing Meta Ads budgets</p>
+            </div>
+            <div class="tried-card">
+              <span class="num">02</span>
+              <p>Testing more creatives</p>
+            </div>
+            <div class="tried-card">
+              <span class="num">03</span>
+              <p>Hiring agencies</p>
+            </div>
+          </div>
+          <div class="tried-row-bot">
+            <div class="tried-card">
+              <span class="num">04</span>
+              <p>Running more offers</p>
+            </div>
+            <div class="tried-card">
+              <span class="num">05</span>
+              <p>Expanding your product range</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="problem-bottom-grid">
+          <div>
+            <p class="problem-conclusion">
+              Yet growth still feels inconsistent.
+            </p>
+          </div>
+          <div>
+            <div class="ads-bold">
+              The problem may not be <span class="gold">your ads.</span>
+            </div>
+            <p class="problem-sub">
+              Your business may simply be missing a clear, scalable growth
+              system.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. WEBINAR OUTCOMES -->
+    <section class="section-outcomes" id="outcomes">
+      <div class="container">
+        <span class="tag-small">Webinar Outcomes</span>
+        <h2>In this 4-hour live webinar, I'll show you:</h2>
+
+        <div class="outcome-list">
+          <div class="outcome-card">
+            <div class="outcome-left">
+              <div class="outcome-num">01</div>
+              <div class="outcome-content">
+                <h3>How to identify what is actually stopping your growth</h3>
+                <p>
+                  Find the real constraint inside your business — whether it's
+                  acquisition, conversion, economics, retention, offer or
+                  operations.
+                </p>
+              </div>
+            </div>
+            <div class="outcome-icon">↗</div>
+          </div>
+
+          <div class="outcome-card">
+            <div class="outcome-left">
+              <div class="outcome-num">02</div>
+              <div class="outcome-content">
+                <h3>How to scale without destroying profitability</h3>
+                <p>
+                  Understand the numbers behind profitable scaling: CAC → AOV →
+                  Contribution Margin → MER → Cash Flow. So you know when to
+                  increase your ad spend — and when you shouldn't.
+                </p>
+              </div>
+            </div>
+            <div class="outcome-icon">📈</div>
+          </div>
+
+          <div class="outcome-card">
+            <div class="outcome-left">
+              <div class="outcome-num">03</div>
+              <div class="outcome-content">
+                <h3>How to build a complete ecommerce growth system</h3>
+                <p>
+                  See how Meta Ads + Creative + CRO + Offers + Unit Economics
+                  work together to create predictable growth.
+                </p>
+              </div>
+            </div>
+            <div class="outcome-icon">⚙</div>
+          </div>
+
+          <div class="outcome-card">
+            <div class="outcome-left">
+              <div class="outcome-num">04</div>
+              <div class="outcome-content">
+                <h3>
+                  How to know when you are ready for international markets
+                </h3>
+                <p>
+                  Don't choose a country just because the market is large. Learn
+                  how to evaluate markets based on: Demand + Competition + AOV +
+                  CAC + Margins + Shipping + Customer Behaviour.
+                </p>
+              </div>
+            </div>
+            <div class="outcome-icon">🌐</div>
+          </div>
+
+          <div class="outcome-card">
+            <div class="outcome-left">
+              <div class="outcome-num">05</div>
+              <div class="outcome-content">
+                <h3>How to scale from India into international markets</h3>
+                <p>
+                  Understand the strategic thinking required to take a proven
+                  ecommerce business beyond India and build a profitable
+                  international growth engine.
+                </p>
+              </div>
+            </div>
+            <div class="outcome-icon">🚀</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 5-PART SYSTEM -->
+    <section class="section-system" id="learn">
+      <div class="container">
+        <span class="tag-small">The 5-Part System</span>
+        <h2>Scaling is a <span class="gold">system.</span></h2>
+
+        <div class="system-grid">
+          <div class="system-box-left">
+            <div class="sys-step">
+              <span class="sys-num">01</span
+              ><span class="sys-step-title">ACQUISITION</span>
+            </div>
+            <div class="sys-step active-gold">
+              <span
+                class="sys-num"
+                style="background: var(--gold); color: #08080a"
+                >02</span
+              ><span class="sys-step-title" style="color: var(--gold)"
+                >CONVERSION</span
+              >
+            </div>
+            <div class="sys-step">
+              <span class="sys-num">03</span
+              ><span class="sys-step-title">ECONOMICS</span>
+            </div>
+            <div class="sys-step">
+              <span class="sys-num">04</span
+              ><span class="sys-step-title">RETENTION</span>
+            </div>
+            <div class="sys-step">
+              <span class="sys-num">05</span
+              ><span class="sys-step-title">OPERATIONS</span>
+            </div>
+            <div class="sys-step profit-box">
+              <span class="sys-num" style="color: var(--gold)">✦</span
+              ><span class="sys-step-title gold">PROFITABLE SCALE</span>
+            </div>
+          </div>
+
+          <div class="system-box-right">
+            <div class="sys-right-title">
+              The levers that must work together
+            </div>
+            <div class="lever-item">
+              <div class="lever-x">✕</div>
+              Meta Ads
+            </div>
+            <div class="lever-item">
+              <div class="lever-x">✕</div>
+              Creative
+            </div>
+            <div class="lever-item">
+              <div class="lever-x">✕</div>
+              CRO
+            </div>
+            <div class="lever-item">
+              <div class="lever-x">✕</div>
+              Offers
+            </div>
+            <div class="lever-item">
+              <div class="lever-x">✕</div>
+              Unit Economics
+            </div>
+            <p class="sys-note">
+              No single lever scales a brand. The system decides whether more ad
+              spend produces profit — or just more revenue.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. POSITIONING -->
+    <section class="section-positioning">
+      <div class="container">
+        <span class="tag-small">Positioning</span>
+        <h2 class="positioning-title">
+          This is not another<br /><span>“Meta Ads webinar”</span>
+        </h2>
+        <p class="positioning-sub">
+          I'm not going to give you another list of campaign hacks. Because
+          scaling isn't about finding one winning campaign.
+        </p>
+
+        <div class="positioning-list">
+          <div class="p-row">Acquisition works.</div>
+          <div class="p-row">Conversion works.</div>
+          <div class="p-row">Economics work.</div>
+          <div class="p-row">Retention works.</div>
+          <div class="p-row">Operations work.</div>
+        </div>
+
+        <div class="positioning-end">Then you scale what works.</div>
+      </div>
+    </section>
+
+    <!-- 6. WHO SHOULD ATTEND -->
+    <section class="section-qual">
+      <div class="container">
+        <span class="tag-small">Qualification</span>
+        <h2>Who should attend?</h2>
+        <p style="color: var(--muted); margin-top: 6px; font-size: 0.95rem">
+          This webinar is for Ecommerce &amp; DTC founders who:
+        </p>
+
+        <div class="qual-grid">
+          <div class="qual-box">
+            <h3>This is for:</h3>
+            <div class="check-grid">
+              <div class="check-item">
+                <div class="check-icon">✓</div>
+                Are already generating revenue
+              </div>
+              <div class="check-item">
+                <div class="check-icon">✓</div>
+                Want to break through their current growth ceiling
+              </div>
+              <div class="check-item">
+                <div class="check-icon">✓</div>
+                Want to scale profitably
+              </div>
+              <div class="check-item">
+                <div class="check-icon">✓</div>
+                Are considering international expansion
+              </div>
+              <div class="check-item">
+                <div class="check-icon">✓</div>
+                Want clarity on what to fix first
+              </div>
+              <div class="check-item">
+                <div class="check-icon">✓</div>
+                Are tired of jumping from one tactic to another
+              </div>
+            </div>
+          </div>
+
+          <div class="qual-box" style="background: var(--bg)">
+            <h3>Not For:</h3>
+            <div class="cross-item">
+              <div class="cross-icon">✕</div>
+              Founders still searching for product-market fit
+            </div>
+            <div class="cross-item">
+              <div class="cross-icon">✕</div>
+              People looking for a "magic" Meta Ads strategy
+            </div>
+            <div class="cross-item">
+              <div class="cross-icon">✕</div>
+              Businesses that want revenue growth at any cost
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. MEET YOUR HOST -->
+    <section class="section-host" id="about">
+      <div class="container">
+        <span class="tag-small">Meet Your Host</span>
+        <div class="host-grid">
+          <div class="host-img-box">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"
+              />
+            </svg>
+            <div>PORTRAIT PLACEHOLDER</div>
+            <div style="font-size: 0.72rem; color: #6e6e78">
+              Professional photo of Mukesh Veerasamy
+            </div>
+          </div>
+
+          <div class="host-details">
+            <h2>Mukesh Veerasamy</h2>
+            <div class="host-role">Ecommerce Growth Strategist</div>
+            <div
+              style="
+                font-size: 0.75rem;
+                font-weight: 800;
+                color: #fff;
+                margin-top: 4px;
+                letter-spacing: 0.04em;
+              "
+            >
+              Founder, One Big Bull
+            </div>
+
+            <p class="host-bio">
+              I've worked with 80+ Ecommerce brands across 20+ niches, helping
+              brands grow through Meta Ads, Creative Strategy, CRO, Offers and
+              profitable growth systems.
+            </p>
+
+            <div class="host-quote">
+              “I don't scale revenue.<br /><span
+                >I scale the business behind the revenue.</span
+              >”
+            </div>
+
+            <div class="host-stats-row">
+              <div>
+                <div class="hst-num">80+</div>
+                <div class="hst-lbl">Brands Worked With</div>
+              </div>
+              <div>
+                <div class="hst-num">20+</div>
+                <div class="hst-lbl">Niches</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. BETTER SYSTEM QUOTE BANNER -->
+    <section class="section-quote-banner">
+      <div class="container">
+        <div class="quote-banner-title">
+          Your next level doesn't require more tactics.
+        </div>
+        <div class="quote-banner-gold">It requires a better system.</div>
+      </div>
+    </section>
+
+    <!-- 9. FINAL CTA -->
+    <section class="section-final" id="cta">
+      <div class="container">
+        <div class="final-box">
+          <span class="tag-small">Live Online</span>
+          <h2>
+            Ready to scale your ecommerce brand
+            <span class="gold">profitably?</span>
+          </h2>
+          <p class="final-sub">
+            Join me live on September 5, 4:00 PM – 8:00 PM IST.<br />Learn how
+            to identify your growth constraint, build a profitable scaling
+            system and determine whether your brand is ready for international
+            expansion.
+          </p>
+
+          <div class="webinar-meta-box">
+            <div class="w-meta-item">
+              <div class="w-meta-label">Format</div>
+              <div class="w-meta-val">Live Online</div>
+            </div>
+            <div class="w-meta-item">
+              <div class="w-meta-label">Date</div>
+              <div class="w-meta-val">September 5</div>
+            </div>
+            <div class="w-meta-item">
+              <div class="w-meta-label">Time</div>
+              <div class="w-meta-val">4:00 PM – 8:00 PM IST</div>
+            </div>
+          </div>
+
+          <button
+            class="btn-gold open-modal-btn"
+            style="font-size: 0.95rem; padding: 18px 40px"
+          >
+            RESERVE MY FREE SEAT
+          </button>
+          <div class="seats-warning">Limited live webinar seats</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer class="footer-bottom">
+      <img
+        src="logo.png"
+        alt="One Big Bull"
+        class="brand-logo-img"
+        style="height: 32px"
+      />
+      <div>Live Online • September 5 • 4:00 PM – 8:00 PM IST</div>
+    </footer>
+    <div class="footer-copy-row">
+      Ecommerce growth strategy • Profitably scaling • International
+      expansion<br /><br />
+      © 2026 One Big Bull. All rights reserved.
+    </div>
+
+    <!-- POPUP MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-card">
+        <button class="modal-close" id="modalClose">✕</button>
+
+        <div class="modal-badge">SEPTEMBER 5 · 4:00 PM – 8:00 PM IST</div>
+        <h2>Reserve your free seat</h2>
+        <p class="modal-sub">
+          4-hour live webinar for Ecommerce &amp; DTC founders.
+        </p>
+
+        <form
+          id="registrationForm"
+          onsubmit="
+            event.preventDefault();
+            alert('Seat reserved successfully!');
+            toggleModal();
+          "
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                required
+                placeholder="Enter first name"
+              />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                required
+                placeholder="Enter last name"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              class="form-control"
+              required
+              placeholder="founder@brand.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Phone / WhatsApp</label>
+            <input
+              type="tel"
+              class="form-control"
+              required
+              placeholder="+91 98765 43210"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Brand / Company Name</label>
+            <input
+              type="text"
+              class="form-control"
+              required
+              placeholder="Your Brand"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Monthly Ecommerce Revenue Range</label>
+            <select class="form-control" required>
+              <option value="" disabled selected>Select a range</option>
+              <option>₹0 - ₹5 Lakhs / month</option>
+              <option>₹5 Lakhs - ₹20 Lakhs / month</option>
+              <option>₹20 Lakhs - ₹50 Lakhs / month</option>
+              <option>₹50 Lakhs - ₹1 Crore+ / month</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-gold">RESERVE MY FREE SEAT</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const modalOverlay = document.getElementById("modalOverlay");
+      const modalClose = document.getElementById("modalClose");
+      const openModalBtns = document.querySelectorAll(".open-modal-btn");
+
+      function toggleModal() {
+        modalOverlay.classList.toggle("active");
+      }
+
+      openModalBtns.forEach((btn) => {
+        btn.addEventListener("click", toggleModal);
+      });
+
+      modalClose.addEventListener("click", toggleModal);
+
+      modalOverlay.addEventListener("click", (e) => {
+        if (e.target === modalOverlay) {
+          toggleModal();
+        }
+      });
+    </script>
+  </body>
+</html>
