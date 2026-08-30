@@ -1651,68 +1651,66 @@
           4-hour live webinar for Ecommerce &amp; DTC founders.
         </p>
 
-        <form
-          id="registrationForm"
-          onsubmit="
-            event.preventDefault();
-            alert('Seat reserved successfully!');
-            toggleModal();
-          "
-        >
+        <form id="registrationForm">>
           <div class="form-row">
             <div class="form-group">
               <label>First Name</label>
               <input
-                type="text"
-                class="form-control"
-                required
-                placeholder="Enter first name"
-              />
+  type="text"
+  class="form-control"
+  name="firstName"
+  required
+  placeholder="Enter first name"
+/>
             </div>
             <div class="form-group">
               <label>Last Name</label>
               <input
-                type="text"
-                class="form-control"
-                required
-                placeholder="Enter last name"
-              />
+  type="text"
+  class="form-control"
+  name="lastName"
+  required
+  placeholder="Enter last name"
+/>
             </div>
           </div>
 
           <div class="form-group">
             <label>Email</label>
             <input
-              type="email"
-              class="form-control"
-              required
-              placeholder="founder@brand.com"
-            />
+  type="email"
+  class="form-control"
+  name="email"
+  required
+  placeholder="founder@brand.com"
+/>
           </div>
 
           <div class="form-group">
             <label>Phone / WhatsApp</label>
             <input
-              type="tel"
-              class="form-control"
-              required
-              placeholder="+91 98765 43210"
-            />
+  type="tel"
+  class="form-control"
+  name="phone"
+  required
+  placeholder="+91 98765 43210"
+/>
           </div>
 
           <div class="form-group">
             <label>Brand / Company Name</label>
             <input
-              type="text"
-              class="form-control"
-              required
-              placeholder="Your Brand"
-            />
+  type="text"
+  class="form-control"
+  name="company"
+  required
+  placeholder="Your Brand"
+/>
           </div>
 
           <div class="form-group">
             <label>Monthly Ecommerce Revenue Range</label>
-            <select class="form-control" required>
+            <select class="form-control" name="revenue" required>
               <option value="" disabled selected>Select a range</option>
               <option>₹0 - ₹5 Lakhs / month</option>
               <option>₹5 Lakhs - ₹20 Lakhs / month</option>
@@ -1726,27 +1724,60 @@
       </div>
     </div>
 
-    <script>
-      const modalOverlay = document.getElementById("modalOverlay");
-      const modalClose = document.getElementById("modalClose");
-      const openModalBtns = document.querySelectorAll(".open-modal-btn");
+   <script>
+const registrationForm = document.getElementById("registrationForm");
 
-      function toggleModal() {
-        modalOverlay.classList.toggle("active");
-      }
+registrationForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
 
-      openModalBtns.forEach((btn) => {
-        btn.addEventListener("click", toggleModal);
-      });
+  const formData = new FormData(registrationForm);
 
-      modalClose.addEventListener("click", toggleModal);
+  const data = {
+    name: (formData.get("firstName") || "") + " " + (formData.get("lastName") || ""),
+    email: formData.get("email") || "",
+    phone: formData.get("phone") || "",
+    company: formData.get("company") || "",
+    message: formData.get("revenue") || ""
+  };
 
-      modalOverlay.addEventListener("click", (e) => {
-        if (e.target === modalOverlay) {
-          toggleModal();
-        }
-      });
-      const scriptURL = "https://script.google.com/macros/s/AKfycbykqU23Izqhx_mRSywH1uCSVIsn_rMWg2Yc7Q5teqRhOsgCKepgFIZfmK3RnRfoplvzZA/exec";
-    </script>
+  try {
+    await fetch(scriptURL, {
+      method: "POST",
+      body: JSON.stringify(data),
+      mode: "no-cors"
+    });
+
+    alert("Seat reserved successfully!");
+    registrationForm.reset();
+    toggleModal();
+
+  } catch (error) {
+    alert("Something went wrong. Please try again.");
+    console.error(error);
+  }
+});
+
+const modalOverlay = document.getElementById("modalOverlay");
+const modalClose = document.getElementById("modalClose");
+const openModalBtns = document.querySelectorAll(".open-modal-btn");
+
+function toggleModal() {
+  modalOverlay.classList.toggle("active");
+}
+
+openModalBtns.forEach((btn) => {
+  btn.addEventListener("click", toggleModal);
+});
+
+modalClose.addEventListener("click", toggleModal);
+
+modalOverlay.addEventListener("click", (e) => {
+  if (e.target === modalOverlay) {
+    toggleModal();
+  }
+});
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbykqU23Izqhx_mRSywH1uCSVIsn_rMWg2Yc7Q5teqRhOsgCKepgFIZfmK3RnRfoplvzZA/exec";
+</script>
   </body>
 </html>
